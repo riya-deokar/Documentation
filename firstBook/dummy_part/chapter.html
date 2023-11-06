@@ -429,7 +429,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="creating-an-ope-textbook">
 <h1><span class="section-number">1. </span>Creating an OPE Textbook<a class="headerlink" href="#creating-an-ope-textbook" title="Permalink to this heading">#</a></h1>
-<p>An example intro chapter of a part</p>
+<p>Creating an OPE textbook Documentation</p>
 <section id="steps">
 <h2><span class="section-number">1.1. </span>Steps<a class="headerlink" href="#steps" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
@@ -446,9 +446,47 @@ document.write(`
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Copy the SSH key to add to your associated github account: Settings &gt; SSH and GPG keys</p></li>
+<li><p>Use this command to look at the content of your key, then copy and add the SSH key to your associated github account: Settings &gt; SSH and GPG keys</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>~/.ssh/config/id_rsa.pub
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Make sure you are able to use github commands on your linux machine, if not run the commands below</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Within the tools directory, clone the empty repository you created with the command below: fill in the username and repository name</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:your_github_username/your_github_empty_repo.git
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Install the OPE Command Line Tool by running the <a class="reference external" href="http://install.sh">install.sh</a> fil in the tools directory as shown below</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./install.sh
+</pre></div>
+</div>
+<p>After that paste the outputted export path line in your command-line
+Lastly, run the ope command to ensure installation</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ope
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Run this command (including your own project repo name and repo url) to create a new project using the empty repository URL as shown below
+You can find your repo’s SSH URL when you the green &lt;&gt; Code button on your github repo
+This will create subdirectories of books, containers, and content in your github repo</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ope<span class="w"> </span>new_project<span class="w"> </span>your_project_name<span class="w"> </span>your_repo_url
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Create a new book in your repository, replacing your_book_name</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ope<span class="w"> </span>new_book<span class="w"> </span>your_book_name
 </pre></div>
 </div>
 </section>
