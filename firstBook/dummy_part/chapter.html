@@ -489,6 +489,17 @@ This will create subdirectories of books, containers, and content in your github
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ope<span class="w"> </span>new_book<span class="w"> </span>your_book_name
 </pre></div>
 </div>
+<ol class="arabic simple" start="10">
+<li><p>Move to your book’s content directory, edit the configure file to change book settings (title, author, logo, URL to publish to, and jupyter extensions enabling)
+If you want to change your textbook’s logo on the top left corner of your book: change the logo .png name and place a new png in the content directory</p></li>
+<li><p>In order to see all the changes you are making in these files you must publish the book using the command below, there is a few reasons this command may not run yet</p></li>
+</ol>
+<p>To do this, make sure you are in your_book_name directory and you should see your Makefile in the content (you can verify the pub target exists at the top of the Makefile)
+If you are receiving an error message regarding ghp-import
+Install the ghp-import command which is used to publish content to GitHub Pages</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ghp-import
+</pre></div>
+</div>
 </section>
 <div class="toctree-wrapper compound">
 </div>
