@@ -465,7 +465,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
-<li><p>Install the OPE Command Line Tool by running the <a class="reference external" href="http://install.sh">install.sh</a> fil in the tools directory as shown below</p></li>
+<li><p>Install the OPE Command Line Tool by running the <a class="reference external" href="http://install.sh">install.sh</a> file in the tools directory as shown below</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./install.sh
 </pre></div>
@@ -490,14 +490,23 @@ This will create subdirectories of books, containers, and content in your github
 </pre></div>
 </div>
 <ol class="arabic simple" start="10">
-<li><p>Move to your book’s content directory, edit the configure file to change book settings (title, author, logo, URL to publish to, and jupyter extensions enabling)
-If you want to change your textbook’s logo on the top left corner of your book: change the logo .png name and place a new png in the content directory</p></li>
+<li><p>Move to your book’s content directory, edit the configure file to change book settings (title, author, logo, URL to publish to, and jupyter extensions enabling)</p></li>
+</ol>
+<p>If you want to change your textbook’s logo on the top left corner of your book: change the logo .png name and place a new .png in the content directory</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>your_book_name
+</pre></div>
+</div>
+<p>If your are looking for which line and column an error is on, you can use the command below to be able to see the line and column numbers</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>-c<span class="w"> </span>your_book_name
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
 <li><p>In order to see all the changes you are making in these files you must publish the book using the command below, there is a few reasons this command may not run yet</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>pub
 </pre></div>
 </div>
-<p>To do this, make sure you are in your_book_name directory and you should see your Makefile in the content (you can verify the pub target exists at the top of the Makefile)</p>
+<p>To do this, make sure you are in your_book_name directory, you should be able to see your Makefile in this directory (you can verify the pub target exists at the top of the Makefile, when you open it)</p>
 <p>If you are receiving an error message regarding ghp-import, install the ghp-import command which is used to publish content to GitHub Pages</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ghp-import
 </pre></div>
