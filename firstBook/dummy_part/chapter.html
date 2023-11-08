@@ -442,7 +442,7 @@ document.write(`
 <ol class="arabic simple" start="3">
 <li><p>Generate an SSH key, using the email associated with your github account</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span>quote<span class="w"> </span>your_email@example.com<span class="w">  </span>quote
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span><span class="s1">&#39;your_email@bu.edu&#39;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
@@ -470,8 +470,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./install.sh
 </pre></div>
 </div>
-<p>After that paste the outputted export path line in your command-line
-Lastly, run the ope command to ensure installation</p>
+<p>Paste the outputted export path line in your command-line</p>
+<p>Verify installation by running the ope command</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ope
 </pre></div>
 </div>
@@ -494,10 +494,24 @@ This will create subdirectories of books, containers, and content in your github
 If you want to change your textbook’s logo on the top left corner of your book: change the logo .png name and place a new png in the content directory</p></li>
 <li><p>In order to see all the changes you are making in these files you must publish the book using the command below, there is a few reasons this command may not run yet</p></li>
 </ol>
-<p>To do this, make sure you are in your_book_name directory and you should see your Makefile in the content (you can verify the pub target exists at the top of the Makefile)
-If you are receiving an error message regarding ghp-import
-Install the ghp-import command which is used to publish content to GitHub Pages</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>pub
+</pre></div>
+</div>
+<p>To do this, make sure you are in your_book_name directory and you should see your Makefile in the content (you can verify the pub target exists at the top of the Makefile)</p>
+<p>If you are receiving an error message regarding ghp-import, install the ghp-import command which is used to publish content to GitHub Pages</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>ghp-import
+</pre></div>
+</div>
+<p>To avoid more errors and make ghp-import globally accessible – make sure to add ‘ghp-import’s binary path to your system’s path by modifying your shell (.bashrc or .zshrc) as shown below</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/usr/local/bin:$PATH&#39;</span>
+</pre></div>
+</div>
+<p>Reload your terminal to apply changes</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+<p>Verify command installation by running the command below</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ghp-import<span class="w"> </span>--version
 </pre></div>
 </div>
 </section>
